@@ -1,7 +1,6 @@
 package ru.ssau.tk.Lilpank.Sandbox;
 
-import static java.lang.Math.atan2;
-import static java.lang.Math.sqrt;
+import static java.lang.Math.*;
 
 public final class CartesianComplex implements Complex {
 
@@ -50,6 +49,8 @@ public final class CartesianComplex implements Complex {
 
     @Override
     public Complex divide(Complex other) {
-        return null;
+        double otherAbsSqr = pow(other.abs(),2);
+        Complex inverted = new CartesianComplex(re/otherAbsSqr,-im/otherAbsSqr);
+        return tines(inverted);
     }
 }
